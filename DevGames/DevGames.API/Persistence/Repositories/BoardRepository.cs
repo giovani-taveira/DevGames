@@ -31,5 +31,11 @@ namespace DevGames.API.Persistence.Repositories
             context.Boards.Update(board);
             context.SaveChanges();
         }
+
+        public void Delete(Board board)
+        {
+            context.Remove(board);
+            context.SaveChanges();
+        }
     }
 }

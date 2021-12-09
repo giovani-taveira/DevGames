@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DevGames.API</name>
+    </assembly>
+    <members>
+        <member name="M:DevGames.API.Controllers.BoardsController.Post(DevGames.API.Models.AddBoardInputModel)">
+            <summary>
+            Post Board
+            </summary>
+            <remarks>
+            Request Body Exemple
+            {
+            "gameTitle" : "Final Fantasy 7 Remake",
+            "gameDescription" : "A RPG game",
+            "rules" : "1. No SPAM."
+            }
+            </remarks>
+            <param name="model">Board Data</param>
+            <returns>Created Object</returns>
+            <response code="201">Sucess</response>
+             <response code="400">Invalid Data</response>
+        </member>
+    </members>
+</doc>

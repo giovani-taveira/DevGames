@@ -8,6 +8,7 @@ namespace DevGames.API.Persistence.Repositories
         Board GetById(int id);
         void Add(Board board);
         void Update(Board board);
+        void Delete(Board board);
 
     }
 }

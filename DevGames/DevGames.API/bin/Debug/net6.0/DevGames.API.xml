@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DevGames.API</name>
+    </assembly>
+    <members>
+        <member name="M:DevGames.API.Controllers.BoardsController.GetAll">
+            <summary>
+            Recuperar todos os boards
+            </summary>
+            <returns>Board</returns>
+            <response code="200">Sucess</response>
+            <response code="404">Boards não encontrados</response>
+        </member>
+        <member name="M:DevGames.API.Controllers.BoardsController.GetById(System.Int32)">
+            <summary>
+            Recuperar um board através do id
+            </summary>
+            <remarks>
+            Exemplo da requisição de um board
+            {
+            "id" : "1",
+            }
+            </remarks>
+            <param name="model">Id do board</param>
+            <returns>Board encontrado pelo id</returns>
+            <response code="200">Board Encontrado</response>
+            <response code="404">Board Inexistente</response>
+        </member>
+        <member name="M:DevGames.API.Controllers.BoardsController.Post(DevGames.API.Models.AddBoardInputModel)">
+            <summary>
+            Publicar um novo board
+            </summary>
+            <remarks>
+            Exemplo da criação de um board
+            {
+            "gameTitle" : "Red Dead Redemption 2",
+            "Description" : "Um jogo de velho oeste",
+            "rules" : "1. Sem SPAM."
+            }
+            </remarks>
+            <param name="model">Informações do board</param>
+            <returns>Objeto Criado</returns>
+            <response code="201">Board Criado</response>
+            <response code="400">Informações Inválidas</response>
+        </member>
+        <member name="M:DevGames.API.Controllers.BoardsController.Put(System.Int32,DevGames.API.Models.UpdateBoardInputModel)">
+            <summary>
+            Atualizar as informações de um board
+            </summary>
+            <remarks>
+            Exemplo da atualização de um board
+            {
+            "Description" : "Boards para ajudar os jogadores",
+            "rules" : "1. Proibido falar de um jogo diferente."
+            }
+            </remarks>
+            <param name="model">Informações do board</param>
+            <returns>Objeto Criado</returns>
+            <response code="204">Board Atualizado</response>
+            <response code="404">Board Inexistente</response>
+        </member>
+        <member name="M:DevGames.API.Controllers.BoardsController.Delete(System.Int32)">
+            <summary>
+            Remover um board através do id
+            </summary>
+            <remarks>
+            Exemplo da requisição de um board
+            {
+            "id" : "1",
+            }
+            </remarks>
+            <param name="model">Id do board</param>
+            <returns>Board removido pelo id</returns>
+            <response code="204">Board Removido</response>
+            <response code="404">Board Inexistente</response>
+        </member>
+        <member name="M:DevGames.API.Controllers.PostsController.GetAll(System.Int32)">
+            <summary>
+            Recuperar todos os posts
+            </summary>
+            <remarks>
+            Exemplo da requisição de um post
+            {
+            "Id" : "1",
+            }
+            </remarks>
+            <returns>Todos os posts encontrados</returns>
+            <response code="200">Posts encontrados</response>
+            <response code="404">Posts Inexistentes</response>
+        </member>
+        <member name="M:DevGames.API.Controllers.PostsController.GetById(System.Int32,System.Int32)">
+            <summary>
+            Recuperar um post pelo id 
+            </summary>
+            <remarks>
+            Exemplo da requisição de um board e um post
+            {
+            "Id" : "1",
+            "PostId" : "1",
+            }
+            </remarks>
+            <param name="model">Id do board e do post</param>
+            <returns>Post encontrado pelo id</returns>
+            <response code="200">Post encontrado</response>
+            <response code="404">Post Inexistente</response>
+        </member>
+        <member name="M:DevGames.API.Controllers.PostsController.Post(System.Int32,DevGames.API.Models.AddPostInputModel)">
+            <summary>
+            Publicar um novo Post
+            </summary>
+            <remarks>
+            Exemplo da criação de um post
+            {
+            "Id" : "1",
+            "Title" : "Preciso de ajuda",
+            "Description" : "não consigo achar uma pantera para caçar",
+            "User" : "FeijãoGamer05"
+            }
+            </remarks>
+            <param name="model">Informações do post</param>
+            <returns>Objeto Criado</returns>
+            <response code="201">Post Criado</response>
+            <response code="400">Informações Inválidas</response>
+            <resposnse code="404">Board não encontrado</resposnse>
+        </member>
+        <member name="M:DevGames.API.Controllers.PostsController.PostComment(System.Int32,System.Int32,DevGames.API.Models.AddCommentInputModel)">
+            <summary>
+            Publicar um novo comentario de um post
+            </summary>
+            <remarks>
+            Exemplo da criação de um comentario
+            {
+            "Id" : "1",
+            "Title" : "Eu sei como te ajudar",
+            "Description" : "A panteras apareçem na região de Saint Denis",
+            "User" : "Ronaldinho"
+            }
+            </remarks>
+            <param name="model">Informações do comentario</param>
+            <returns>Objeto Criado</returns>
+            <response code="204">Comentário Criado</response>
+            <response code="404">Post não encontrado</response>
+        </member>
+    </members>
+</doc>
